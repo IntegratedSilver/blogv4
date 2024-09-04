@@ -33,20 +33,20 @@ const App = () => {
   const toggleDarkMode = () => {
     setIsDarkMode((prevMode) => !prevMode);
   };
-  useEffect(() => {
+  // useEffect(() => {
 
-    const storedUser = localStorage.getItem("UserData");
-    console.log(JSON.parse(storedUser),"this is stored user")
-    if(storedUser)
-    {
-        let Userstored = JSON.parse(storedUser);
-        console.log(Userstored.publisherName,"userstored")
-      setUser(Userstored);
-    }
+  //   const storedUser = localStorage.getItem("UserData");
+  //   console.log(JSON.parse(storedUser),"this is stored user")
+  //   if(storedUser)
+  //   {
+  //       let Userstored = JSON.parse(storedUser);
+  //       console.log(Userstored.publisherName,"userstored")
+  //     setUser(Userstored);
+  //   }
   
     
     
-  }, [])
+  // }, [])
 
   return (
     <>
@@ -68,9 +68,9 @@ const App = () => {
             </Col>
               <Routes>
                 <Route path="/" element={<BlogPage/>}/>
-                <Route path="/Login" element={<Login onLogin={handleLogin} />}/>
+                <Route path="/Login" element={<Login  />}/>
                 <Route path="/CreateAccount" element={<CreateAccount/>}/>
-                <Route path="/Dashboard" element={<Dashboard isDarkMode={isDarkMode} />}/>
+                <Route path="/Dashboard" element={<Dashboard isDarkMode={isDarkMode} onLogin={handleLogin} />}/>
 
               </Routes>
 

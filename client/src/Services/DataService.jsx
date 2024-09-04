@@ -55,7 +55,7 @@ const login = async (loginUser) =>
         if(data.token != null)
         {
             localStorage.setItem("Token",data.token);
-            localStorage.setItem("UserData",JSON.stringify(data.user));// we might need to comment this out
+            // localStorage.setItem("UserData",JSON.stringify(data.user));// This was returning a token and was getting undefined
         }
         console.log(data,"login method");
         return data;
@@ -69,6 +69,7 @@ const login = async (loginUser) =>
         console.log(userData,"getloggedinsuser method")
         localStorage.setItem("UserData",JSON.stringify(userData));
         userData = JSON.parse(localStorage.getItem("UserData"));
+            
 
     }
 
